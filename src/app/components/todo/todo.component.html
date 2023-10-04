@@ -1,9 +1,0 @@
-<div
-  class="todo list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-  [class.list-group-item-success]="todo.status === todoStatus.DONE"
-  (click)="markDone()"
-  (contextmenu)="markUndone($event)"
->
-  {{ todo.title }}
-  <div (click)="dropTodo()">Remove</div>
-</div>
