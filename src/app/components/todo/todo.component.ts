@@ -17,6 +17,12 @@ export class TodoComponent {
     this.todoService.saveToLocalStorage();
   }
 
+  public markUndone(event: Event) {
+    this.todo.status = TodoStatus.UNDONE;
+    event.preventDefault();
+    this.todoService.saveToLocalStorage();
+  }
+
   public dropTodo() {
     this.todo.title = '';
     this.todoService.filter();
