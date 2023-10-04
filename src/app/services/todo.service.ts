@@ -18,4 +18,12 @@ export class TodoService {
   public filter() {
     this.todos = this.todos.filter((todo: ITodo) => todo.title.length !== 0);
   }
+
+  public loadFromStorage() {
+    this.todos = JSON.parse(window.localStorage.getItem('todos') || '[]');
+  }
+
+  public saveToLocalStorage() {
+    window.localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 }

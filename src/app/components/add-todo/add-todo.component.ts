@@ -12,5 +12,6 @@ export class AddTodoComponent {
   public addTodo() {
     this.todoService.addTodo(this.newTodoTitle);
     this.newTodoTitle = '';
+    this.todoService.saveToLocalStorage();
   }
 }

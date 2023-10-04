@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TodoService } from 'src/app/services/todo.service';
 import { ITodo } from 'src/models/todo.model';
 
 @Component({
@@ -8,4 +9,8 @@ import { ITodo } from 'src/models/todo.model';
 })
 export class TodoListComponent {
   @Input() todos: ITodo[] = [];
+  constructor(readonly todoService: TodoService) {}
+  ngOnInit() {
+    this.todoService.loadFromStorage();
+  }
 }

@@ -14,10 +14,12 @@ export class TodoComponent {
 
   public markDone() {
     this.todo.status = TodoStatus.DONE;
+    this.todoService.saveToLocalStorage();
   }
 
   public dropTodo() {
     this.todo.title = '';
     this.todoService.filter();
+    this.todoService.saveToLocalStorage();
   }
 }
